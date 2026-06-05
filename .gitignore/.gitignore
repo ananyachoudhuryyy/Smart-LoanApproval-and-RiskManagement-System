@@ -1,0 +1,9 @@
+__pycache__/
+.ipynb_checkpoints/
+
+artifacts/X_train.csv
+artifacts/X_test.csv
+artifacts/X_train_scaled.csv
+artifacts/X_test_scaled.csv
+artifacts/y_train.csv
+artifacts/y_test.csv

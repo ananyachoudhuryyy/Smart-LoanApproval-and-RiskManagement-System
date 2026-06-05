@@ -1,0 +1,370 @@
+SmartLoan — style.css
+   Dark financial-grade UI | Deep navy + electric accents
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+/* ── Root & Global ────────────────────────────────────────── */
+:root {
+    --bg-primary:    #080E1A;
+    --bg-card:       #0D1626;
+    --bg-card-hover: #111E35;
+    --border:        #1A2744;
+    --border-accent: #243560;
+    --text-primary:  #E0E8FF;
+    --text-muted:    #7A90B8;
+    --accent-blue:   #4F8EF7;
+    --accent-green:  #2ECC71;
+    --accent-red:    #E74C3C;
+    --accent-gold:   #F5A623;
+    --font-display:  'Syne', sans-serif;
+    --font-body:     'DM Sans', sans-serif;
+}
+
+/* Global background */
+.stApp {
+    background: var(--bg-primary) !important;
+    font-family: var(--font-body) !important;
+}
+
+/* Remove default Streamlit padding/margin oddities */
+.block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+    max-width: 1300px !important;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background: #070D1A !important;
+    border-right: 1px solid var(--border) !important;
+}
+
+[data-testid="stSidebar"] .stRadio label {
+    color: var(--text-muted) !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.95rem !important;
+    padding: 0.4rem 0 !important;
+    transition: color 0.2s;
+}
+
+[data-testid="stSidebar"] .stRadio label:hover {
+    color: var(--accent-blue) !important;
+}
+
+.sidebar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0 0.5rem;
+    text-align: center;
+}
+
+.brand-icon {
+    font-size: 2.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.brand-name {
+    font-family: var(--font-display) !important;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.brand-sub {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+}
+
+.sidebar-info {
+    padding: 0 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.83rem;
+    line-height: 1.8;
+}
+
+.sidebar-info b {
+    color: var(--text-primary);
+}
+
+/* ── Page Titles ──────────────────────────────────────────── */
+.page-title {
+    font-family: var(--font-display) !important;
+    font-size: 2.4rem !important;
+    font-weight: 800 !important;
+    color: var(--text-primary) !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 0.1rem !important;
+    line-height: 1.1 !important;
+}
+
+.title-accent {
+    color: var(--accent-blue) !important;
+}
+
+.page-subtitle {
+    color: var(--text-muted) !important;
+    font-size: 1rem !important;
+    margin-bottom: 2rem !important;
+    font-weight: 400 !important;
+}
+
+/* ── KPI Cards ────────────────────────────────────────────── */
+.kpi-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+}
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(79,142,247,0.12);
+    background: var(--bg-card-hover);
+}
+
+.kpi-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.kpi-value {
+    font-family: var(--font-display) !important;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.kpi-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 0.3rem;
+}
+
+/* ── Chart Cards ──────────────────────────────────────────── */
+.chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.2rem 1.2rem 0.4rem;
+    margin-bottom: 1.2rem;
+    transition: box-shadow 0.2s;
+}
+
+.chart-card:hover {
+    box-shadow: 0 4px 24px rgba(79,142,247,0.08);
+}
+
+.chart-title {
+    font-family: var(--font-display) !important;
+    font-size: 1.0rem !important;
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 0.5rem !important;
+    letter-spacing: -0.2px !important;
+}
+
+/* ── Stat Cards (Quick Stats) ─────────────────────────────── */
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.2rem;
+}
+
+.stat-icon { font-size: 1.4rem; }
+
+.stat-val {
+    font-family: var(--font-display) !important;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+.stat-lbl {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* ── Section Labels (Prediction Form) ────────────────────── */
+.section-label {
+    font-family: var(--font-display) !important;
+    font-size: 1.0rem !important;
+    font-weight: 700 !important;
+    color: var(--accent-blue) !important;
+    margin: 1rem 0 0.5rem !important;
+    letter-spacing: 0.3px !important;
+}
+
+/* ── Form Inputs ──────────────────────────────────────────── */
+.stSelectbox > div > div,
+.stNumberInput > div > div > input {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-accent) !important;
+    border-radius: 8px !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-body) !important;
+}
+
+.stSelectbox label,
+.stNumberInput label {
+    color: var(--text-muted) !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+}
+
+/* Submit button */
+.stFormSubmitButton button {
+    background: linear-gradient(135deg, #4F8EF7 0%, #2563EB 100%) !important;
+    color: white !important;
+    font-family: var(--font-display) !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.85rem 2rem !important;
+    letter-spacing: 0.3px !important;
+    transition: opacity 0.2s, transform 0.1s !important;
+    margin-top: 1rem !important;
+}
+
+.stFormSubmitButton button:hover {
+    opacity: 0.9 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px rgba(79,142,247,0.35) !important;
+}
+
+/* ── Result Card ──────────────────────────────────────────── */
+.result-card {
+    border-radius: 18px;
+    padding: 2rem 2rem 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.result-verdict {
+    font-family: var(--font-display) !important;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.result-item {
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    padding: 0.8rem;
+}
+
+.result-item-val {
+    font-family: var(--font-display) !important;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.result-item-lbl {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin-top: 0.3rem;
+}
+
+/* ── Insight Box ──────────────────────────────────────────── */
+.insight-box {
+    background: rgba(79,142,247,0.08);
+    border: 1px solid rgba(79,142,247,0.3);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    color: var(--text-primary);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
+.insight-icon { font-size: 1.4rem; margin-top: 0.1rem; }
+
+/* ── Tabs ─────────────────────────────────────────────────── */
+.stTabs [data-baseweb="tab-list"] {
+    background: var(--bg-card) !important;
+    border-radius: 10px !important;
+    border: 1px solid var(--border) !important;
+    padding: 0.3rem !important;
+    gap: 0.2rem !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent !important;
+    color: var(--text-muted) !important;
+    border-radius: 8px !important;
+    font-family: var(--font-body) !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--accent-blue) !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* ── Divider ──────────────────────────────────────────────── */
+hr {
+    border-color: var(--border) !important;
+    margin: 1rem 0 !important;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+
+/* ── Dataframe ────────────────────────────────────────────── */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* ── Expander ─────────────────────────────────────────────── */
+.streamlit-expanderHeader {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-body) !important;
+}
