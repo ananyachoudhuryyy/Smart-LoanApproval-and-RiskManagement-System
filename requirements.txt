@@ -8,6 +8,7 @@ seaborn
 scikit-learn
 plotly
 jupyter notebook
+CSS
 
 Streamlit
 Github
